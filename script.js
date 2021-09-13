@@ -69,7 +69,7 @@ function showslide() {
 
 let interval = setInterval(()=> {
     showslide();
-} , 4000);   // Change every image after 3 seconds
+} , 3000);   // Change every image after 3 seconds
 
 slider.addEventListener("mouseover" , ()=> {
     clearInterval(interval);     // onHover Stop Changing every image after 3 seconds 
@@ -78,6 +78,6 @@ slider.addEventListener("mouseover" , ()=> {
 slider.addEventListener("mouseout" , ()=> {
     interval = setInterval(()=> {
         showslide();   
-    } , 4000);    // on mouseout from slide then again start Changing every image after 3  seconds 
+    } , 3000);    // on mouseout from slide then again start Changing every image after 3  seconds 
 });
 

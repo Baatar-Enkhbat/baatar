@@ -1,61 +1,101 @@
 :root {
-    --primary-color: #e95504;
+    --premium-color: #dcddde;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* navbar */
-
-.navbar {
-    width: 85%;
-    margin: auto;
-    padding: 30px 0;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    z-index: 1;
+html {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 30px;
-    position: relative;
+/* utility */
 
-}.navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-family: santa 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 0.8rem;
-}
-
-.navbar ul li::after {
-    content: '';
-    height: 3px;
-    width: 0;
-    background: var(--primary-color);
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-} 
-
-.navbar ul li:hover::after {
+.size {
+    padding: 50px;
     width: 100%;
+}
+
+.b-color {
+    position: relative;
+    background: var(--premium-color);
+}
+
+.container{
+    max-width: 1300px;
+    overflow: hidden;
+}
+
+ /* top */
+.top .container{
+    display: grid;
+    grid-template-columns: auto 270px 180px;
+}
+
+.text-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: var(--premium-color);
+}
+.text-top p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.main-menu .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.phone {
+    background: #000;
+}
+
+.contact {
+    background: #fff200;
+}
+
+.logo img{
+    width: 360px;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    padding: 15px;
+}
+
+.menu ul li {
+    display: flex;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu ul li a:hover {
+    color: #3099bf;
+}
+
+.menu ul li img {
+    width: 43px;
 }
 
 /* slide show */
 .slider {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     overflow: hidden;
-    
 }
 
 .slides {
@@ -65,7 +105,6 @@
     top: 0;
     left: 0;
     transition: 2s ease;
-    
 }
 
 .slide {
@@ -74,7 +113,7 @@
     position: relative;
     float: left;
     background-size: cover;
-    background-position: top center;
+    background-position: center center;
     background-repeat: no-repeat;
 }
 
@@ -88,46 +127,62 @@
 }
 
 .slide:nth-child(1) {
-    background-image: url(../img/IMG-1.jpg);   
+    background-image: url(../img/img-1.jpg);
 }
+
 .slide:nth-child(2) {
-    background-image: url(../img/IMG-2.JPG);
+    background-image: url(../img/img-2.jpg);
 }
+
 .slide:nth-child(3) {
-    background-image: url(../img/IMG-3.JPG);
+    background-image: url(../img/img-3.jpg);
 }
+
 .slide:nth-child(4) {
-    background-image: url(../img/IMG-4.JPG);
+    background-image: url(../img/img-4.jpg);
 }
 
 .slide-data {
-    content: '';
     position: absolute;
-    top: 90%;
-    right: 9%;
+    top: 80%;
     transform: translateY(-50%);
     width: 100%;
-    justify-content: left;
-    text-align: left;
+    text-align: center;
     color: #fff;
     padding: 0 20%;
 }
 
-.slide-data button {
-    font-family: "Roboto", serif;
-    background: #fff;
-    border-radius: 15px;
-    border: 1px solid #fff;
-    color: var(--primary-color);
+.sd {
+    position: absolute;
+    top: 80%;
+    left: -21%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 0 20%;
+}
+
+.slide-data h1 {
+    font-family: "Anton", serif;
+    text-transform: uppercase;
     font-weight: bolder;
-    padding: 5px 10px;
-    font-size: 15px;
-    transition: 0.4s linear;
+    font-size: 45px;
+}
+
+.slide-data p {
+    font-family: "Cabin", serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.slide-data a {
+    text-align: center;
 }
 
 .slide-data button:hover {
-    color: #fff;
-    background-color: var(--primary-color);
+    color: #000;
+    background-color: #fff;
 }
 
 .slider .arrows {
@@ -137,8 +192,8 @@
     background: none;
     outline: none;
     border: none;
-    font-size: 30px;
-    color: #fff;
+    font-size: 60px;
+    color: var(--premium-color);
     transition: 0.4s linear;
 }
 
@@ -155,96 +210,87 @@
 }
 
 .dots {
-    position: absolute;
+    position: relative;
     bottom: 1%;
     width: 100%;
     text-align: center;
+    padding: 25px;
+    background: var(--premium-color);
 }
 
 .dots span {
-    width: 13px;
-    height: 13px;
+    width: 20px;
+    height: 20px;
     border-radius: 100px;
     margin: 0 6px;
-    background-color: rgb(156, 156, 156);
+    background-color: #fff;
+    border: 2px solid #333;
     display: inline-block;
     transition: 0.4s linear;
 }
 
 .dots span:hover {
-    background-color: #fff !important;
+    background-color: #333 !important;
+    border: 2px solid #fff;
 }
 
 .dot-active {
-    background-color: #fff !important;
+    background-color: #333 !important;
+    border: 2px solid #fff;
 }
 
-/* hero-image */
-.hero-image {
+/* section-1 */
+
+.more img{
+    position: absolute;
+    top: 75%;
+    left: 80%;
+}
+
+.more-2 img {
+    position: absolute;
+    top: 82.5%;
+    left: 80%;
+}
+
+.bp {
     display: grid;
-    grid-column: auto;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 20px;
+    width: 100%;
+    padding: 50px;
 }
 
-img {
-    width: 100%;
+.bp img {
+    max-width: 570px;
 }
 
 /* footer */
-
-#footnav {
+.footer-container {
     display: grid;
-    grid-template-areas: 
-    'logo menu menu menu menu'
-    'logo loc loc loc loc';
-    background: var(--primary-color);
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 1.5rem;
+    padding: 60px;
 }
 
-.logo {
-    grid-area: logo;
-    width: 300px;
+.f-5 span {
+    font-size: 20px;
+}
+
+footer .f-6 p{
+    text-align: center;
     padding: 20px;
 }
 
-.menu {
-    grid-area: menu;
-    text-align: center;
-}
-
-.menu ul {
+.f-1, .f-2, .f-3, .f-4 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: center;
-    list-style: none;
-    padding-top: 30px;
-}
+} 
 
-.menu ul li a{
+.f-1 a, .f-2 a, .f-3 a, .f-4 a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
 }
 
-.menu ul li a:hover{
-    color: rgb(44, 29, 29);
-}
-.menu ul li h2 {
-    color: #fff;
-    font-size: 10px;
-}
-
-.loc {
-    grid-area: loc;
-}
-
-.loc h1 {
-    font-size: 15px;
-    padding: 20px;
-    color: #fff;
-}
-
-
-
-footer h3 {
-    text-align: center;
-    font-size: 13px;
-    padding: 15px;
+.f-5 h1, .f-5 p{
+    text-align: right;
 }
